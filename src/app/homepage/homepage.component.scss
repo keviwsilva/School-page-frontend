@@ -1,0 +1,100 @@
+$primary-color: #3E41F3;
+
+header{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    height: 60px;
+    span{
+        margin-left: 50px;
+        margin: 10px;
+        font-size: 30px;
+        color: #000000;
+    }
+
+}
+
+main{
+    position: relative;
+    width: 100%;
+    .banner{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 90%;
+        height: 90vh;
+    
+        .text{
+            position: absolute;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+
+            h2{
+                font-size: 60px;
+                text-align: center;
+            }
+
+            span{
+                font-size: 36px;
+            }
+        }
+
+        img{
+            right: 0;
+            position: absolute;
+            width: 40%;
+        }
+    }
+.cursos{
+    // background-color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+
+    .card{
+        width: 31%;
+        height: 800px;
+        img{
+            margin-top: 10px;
+        width: 100%;
+        height: 50%;
+
+      }
+}
+}
+    .feed{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        left: 50%;
+        transform: translate(-50%);
+        width: 85%;
+
+        .post{
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+
+            width: 34%;
+            height: 600px;
+
+            img{
+                width: 80%;
+            }
+            video{
+                width: 80%;
+            }
+        }
+
+    }
+}
