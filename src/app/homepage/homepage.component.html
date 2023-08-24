@@ -9,49 +9,93 @@
 <main>
   <section class="banner">
     <div class="text">
-    <h2>
-      SmartEdge
-    </h2>
-    <span>
-      Na  SmartEdge, acreditamos que a educação é a chave para o sucesso. Oferecemos uma variedade de cursos cuidadosamente projetados para atender às suas necessidades e aspirações. Com instrutores experientes e uma abordagem prática de aprendizado, estamos comprometidos em fornecer a você a melhor educação possível.
-    </span>
+      <h2>
+        SmartEdge
+      </h2>
+      <span>
+        Na SmartEdge, acreditamos que a educação é a chave para o sucesso. Oferecemos uma variedade de cursos
+        cuidadosamente projetados para atender às suas necessidades e aspirações. Com instrutores experientes e uma
+        abordagem prática de aprendizado, estamos comprometidos em fornecer a você a melhor educação possível.
+      </span>
     </div>
-    
-    <img src="../../assets/images/imagebanner.png" alt="">
+
+    <img src="../../assets/images/imagebanner.jpg" alt="">
     <!-- <img src="../../assets/images/wave.svg" alt=""> -->
-    
+
   </section>
   <div class="cursos">
+    <!-- <div class="section-cards"> -->
     <div class="card">
-      <img src="../../assets/images/frontend.png" alt="">
+      <img src="../../assets/images/frontend-png.png" alt="">
+      <h2>Front-end</h2>
+      <span>Profissionais de Front End desempenham o papel crucial de transformar conceitos de design em interfaces interativas por meio de codificação. Usando linguagens-chave da Web, como HTML, CSS e JavaScript, eles estruturam páginas, estilizam elementos e adicionam funcionalidades. Sua expertise assegura uma experiência de usuário atraente e responsiva em sites e aplicativos. Além disso, eles colaboram frequentemente com designers e desenvolvedores de Back End para garantir a harmonia entre a aparência e o desempenho do produto final. Habilidades em design responsivo e acessibilidade são essenciais para criar interfaces adaptáveis e inclusivas. Em resumo, profissionais de Front End são os arquitetos visuais da Web, combinando criatividade e habilidades técnicas para criar experiências digitais memoráveis.</span>
     </div>
     <div class="card">
-      <img src="../../assets/images/backend.png" alt="">
+      <img src="../../assets/images/backend-png.png" alt="">
+      <h2>Backend</h2>
+      <span>As linguagens de programação Backend atuam nos bastidores das funcionalidades das aplicações web. Elas são responsáveis por criar o código que estabelece a ligação entre a internet e o banco de dados, além de gerenciar as interações dos usuários e fornecer suporte à aplicação web. Essa camada do desenvolvimento concentra-se na lógica e na estrutura que permitem que os recursos do sistema funcionem sem problemas. Os programadores de Backend trabalham para garantir a segurança dos dados, a eficiência das operações e a escalabilidade da aplicação à medida que o número de usuários cresce. Em colaboração com os desenvolvedores de Front End, eles formam uma equipe fundamental na criação de experiências online completas e robustas.</span>
 
     </div>
     <div class="card">
 
-      <img src="../../assets/images/fullstack.png" alt="">
+      <img src="../../assets/images/fullstack-png.png" alt="">
+      <h2>Fullstack</h2>
+      <span> Um desenvolvedor full-stack é habilidoso tanto na criação visual e na interação do usuário em um site ou aplicativo (Frontend) quanto na gestão de armazenamento e processamento de dados no servidor (Backend). Essa abordagem abrangente permite que eles construam produtos digitais completos, desde a interface amigável até as funcionalidades complexas nos bastidores. Com proficiência em linguagens como HTML, CSS e JavaScript, eles moldam a experiência do usuário de forma envolvente. Além disso, sua compreensão de linguagens de servidor, bancos de dados e estruturas de back-end lhes permite implementar sistemas eficientes que lidam com a coleta, armazenamento e recuperação de informações de maneira segura. Essa capacidade de trabalhar em ambas as camadas do desenvolvimento os torna recursos valiosos na criação de soluções tecnológicas completas e integradas.</span>
     </div>
+    <!-- </div> -->
   </div>
-  
+
   <div class="feed">
     <div *ngFor="let post of posts" class="post">
       <h3>{{ post.pts_title }}</h3>
       <p>{{ post.pts_description }}</p>
 
-      
-  <ng-container *ngIf="post.pts_image">
-    <img [src]="getImageUrl(post.pts_image)" alt="Post Image" width="200">
-  </ng-container>
-  
-  <ng-container *ngIf="post.pts_video">
-    <video [src]="getVideoUrl(post.pts_video)" controls width="200"></video>
-  </ng-container>
+
+      <ng-container *ngIf="post.pts_image">
+        <img [src]="getImageUrl(post.pts_image)" alt="Post Image" width="200">
+      </ng-container>
+
+      <ng-container *ngIf="post.pts_video">
+        <video [src]="getVideoUrl(post.pts_video)" controls width="200"></video>
+      </ng-container>
 
     </div>
   </div>
-  <section>
+  <section class="courses-prices">
+    <div class="price">
+      <h2>Front-end</h2>
+      <img src="../../assets/images/html.png" alt="">
+      <span class="description">Aprenda a criar interfaces visuais incríveis usando HTML para estrutura, CSS para design
+        e JavaScript para interatividade. Explore bibliotecas como React e técnicas de design responsivo para tornar
+        suas criações adaptáveis em todos os dispositivos.</span>
+      <div class="duration">
+        <span><i>Duração:</i> 3 meses</span>
+        <span><i>Preço:</i> R$ 1.500</span>
+      </div>
+    </div>
+    <div class="price">
+      <h2>Back-end</h2>
+      <img src="../../assets/images/back.png" alt="">
+      <span class="description">Dominar linguagens como Python ou Node.js para construir a lógica por trás de
+        aplicativos. Crie bancos de dados, APIs e fortaleça a segurança para garantir o funcionamento eficiente e
+        protegido dos sistemas.</span>
+      <div class="duration">
+        <span><i>Duração:</i> 2 meses</span>
+
+        <span><i>Preço:</i> R$ 1.800</span>
+      </div>
+    </div>
+    <div class="price">
+      <h2>Fullstack</h2>
+      <img src="../../assets/images/fullsta.png" alt="">
+      <span class="description">Domine tanto o desenvolvimento de interfaces atraentes quanto a lógica complexa dos
+        bastidores. Desenvolva habilidades de colaboração, versionamento e implantação, criando aplicativos completos
+        prontos para o mundo real.</span>
+      <div class="duration">
+        <span><i>Duração:</i> 6 meses</span>
+        <span><i>Preço:</i> R$ 3.000</span>
+      </div>
+    </div>
   </section>
 </main>
 <footer>

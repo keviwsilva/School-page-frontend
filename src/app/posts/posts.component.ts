@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { ServiceService } from 'src/_service/service.service';
 import { response } from 'express';
@@ -24,7 +24,23 @@ export class PostsComponent implements OnInit {
   updatedDescription: any;
 
 
-  constructor(private postService: ServiceService, private route: ActivatedRoute, private authGuardService: AuthGuardService, private router: Router){};
+  constructor(private postService: ServiceService, private route: ActivatedRoute, private authGuardService: AuthGuardService, private router: Router, private cdr: ChangeDetectorRef){};
+
+
+  
+  @ViewChild('videoInput', { static: false }) videoInput!: ElementRef;
+  @ViewChild('imageInput', { static: false }) imageInput!: ElementRef;
+
+
+  imagePreview: string | undefined;
+
+  videoClicked() {
+    this.videoInput.nativeElement.click();
+  }
+
+  imageClicked() {
+    this.imageInput.nativeElement.click();
+  }
 
 
   ngOnInit(): void {
@@ -73,10 +89,24 @@ export class PostsComponent implements OnInit {
 
   onVideoSelected(event: any) {
     this.videoFile = event.target.files[0];
+    
   }
 
   onImageSelected(event: any) {
     this.imageFile = event.target.files[0];
+
+    // this.videoFile = event.target.files[0];
+    const selectedImage = event.target.files[0];
+    
+    // Handle image selection logic here
+    console.log('Image selected:', selectedImage);
+
+    // Display the preview of the selected image
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result as string;
+    };
+    reader.readAsDataURL(selectedImage);
   }
 
   getImageUrl(imageFileName: string): string {
@@ -160,6 +190,10 @@ export class PostsComponent implements OnInit {
         // Erro - Faça algo aqui, como exibir uma mensagem de erro
       }
     );
+  }
+
+  homepage(){
+    this.router.navigate(['/home']);
   }
 
 }

@@ -1,0 +1,97 @@
+$primary-color: #3E41F3;
+
+header{
+    
+    background-color: $primary-color;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    height: 60px;
+    span{
+        margin-left: 50px;
+        margin: 10px;
+        font-size: 30px;
+        color: #000000;
+    }
+
+}
+
+main{
+    .posts-add{
+        position: relative;
+        top: 30px;
+        width: 60%;
+        margin: auto;
+        padding-bottom: 30px;
+        border: solid 1px #000000;
+        background-color: #3E41F3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .title-input{
+            width: 300px;
+            height: 30px;
+            background-color: transparent;
+            border: solid 2px #fff;
+            border-radius: 10px;
+            outline: none;
+            color: #fff;
+        }
+        .description-text{
+            width: 300px;
+            height: 70px;
+            background-color: transparent;
+            border: solid 2px #fff;
+            border-radius: 10px;
+            outline: none;
+            color: #fff;
+        }
+        .files{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .inputs{
+
+                display: flex;
+                flex-direction: row;
+                label{
+                margin-top: 30px;
+                height: 40px;
+                width: 300px;
+                display: flex;
+                justify-content: center;
+
+                align-items: center;
+                flex-direction: column;
+                i{
+                    font-size: 40px;
+                }
+                .image-input{
+                    display: none;
+                }
+               
+                .video-input{
+                    display: none;
+                }
+                
+            }
+        }
+            .preview{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                margin: 20px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
